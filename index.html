@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minijuego Interruptores - Medio Ambiente</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-wrapper">
+    <header class="game-header">
+      <h1>Apaga los interruptores</h1>
+      <p class="subtitle">
+        Tienes 1 minuto para apagar <strong>30 interruptores encendidos</strong>.
+      </p>
+      <div class="info-bar">
+        <div class="info-box">
+          <span class="label">Tiempo:</span>
+          <span id="time-remaining">60</span>s
+        </div>
+        <div class="info-box">
+          <span class="label">Interruptores apagados:</span>
+          <span id="score">0</span> / <span id="target">30</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div class="switch-grid" id="switch-grid">
+        <!-- Se rellenará desde script.js -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Overlay de resultado -->
+  <div id="result-overlay" class="overlay hidden">
+    <div class="overlay-content">
+      <h2 id="result-title"></h2>
+      <p id="result-message"></p>
+      <div class="overlay-buttons">
+        <button id="retry-btn" class="btn secondary">Reintentar</button>
+        <button id="next-btn" class="btn primary">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
