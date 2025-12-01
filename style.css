@@ -1,0 +1,198 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #e5f5e0; /* verde muy suave */
+  color: #123524;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Contenedor principal */
+.game-wrapper {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  max-width: 900px;
+  width: 100%;
+  padding: 24px;
+}
+
+/* Cabecera */
+.game-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.game-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #496f5b;
+}
+
+.info-bar {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  background: #f1f8f3;
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  border: 1px solid #cde5d1;
+}
+
+.info-box .label {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+/* Área de juego */
+.game-area {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.switch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(60px, 120px));
+  gap: 16px;
+}
+
+/* Interruptores */
+.switch {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #d4e6d5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.switch img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.switch:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* Overlay de resultado */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 24px 20px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.overlay-content p {
+  font-size: 0.95rem;
+  color: #435b4a;
+  margin-bottom: 16px;
+}
+
+.overlay-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Botones */
+.btn {
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
+}
+
+.btn.primary {
+  background: #2e7d32;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.45);
+}
+
+.btn.primary:hover {
+  background: #256527;
+}
+
+.btn.secondary {
+  background: #eeeeee;
+  color: #333333;
+}
+
+.btn.secondary:hover {
+  background: #e0e0e0;
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .game-wrapper {
+    padding: 16px;
+  }
+
+  .game-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .switch-grid {
+    gap: 10px;
+  }
+}
